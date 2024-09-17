@@ -1,6 +1,6 @@
 [package]
 name = "wasi-passthrough"
-version = "0.1.0"
+version = "0.1.1"
 description = "WASI reexport layer"
 authors = ["Roman Volosatovs <rvolosatovs@riseup.net>"]
 categories = ["wasm"]

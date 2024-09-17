@@ -5,14 +5,15 @@ use crate::bindings::wasi::io::error::Error;
 use crate::bindings::wasi::io::poll::{self, Pollable};
 use crate::bindings::wasi::io::streams::{InputStream, OutputStream, StreamError};
 
-impl From<StreamError> for exports::wasi::io::streams::StreamError {
-    fn from(value: StreamError) -> Self {
-        match value {
-            StreamError::LastOperationFailed(err) => {
-                Self::LastOperationFailed(exports::wasi::io::error::Error::new(err))
-            }
-            StreamError::Closed => Self::Closed,
-        }
+impl From<exports::wasi::io::error::Error> for Error {
+    fn from(value: exports::wasi::io::error::Error) -> Self {
+        value.into_inner()
+    }
+}
+
+impl From<Error> for exports::wasi::io::error::Error {
+    fn from(value: Error) -> Self {
+        Self::new(value)
     }
 }
 
@@ -49,6 +50,26 @@ impl From<exports::wasi::io::streams::OutputStream> for OutputStream {
 impl From<OutputStream> for exports::wasi::io::streams::OutputStream {
     fn from(value: OutputStream) -> Self {
         Self::new(value)
+    }
+}
+
+impl From<exports::wasi::io::streams::StreamError> for StreamError {
+    fn from(value: exports::wasi::io::streams::StreamError) -> Self {
+        match value {
+            exports::wasi::io::streams::StreamError::LastOperationFailed(err) => {
+                Self::LastOperationFailed(err.into())
+            }
+            exports::wasi::io::streams::StreamError::Closed => Self::Closed,
+        }
+    }
+}
+
+impl From<StreamError> for exports::wasi::io::streams::StreamError {
+    fn from(value: StreamError) -> Self {
+        match value {
+            StreamError::LastOperationFailed(err) => Self::LastOperationFailed(err.into()),
+            StreamError::Closed => Self::Closed,
+        }
     }
 }
 
