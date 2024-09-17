@@ -1,0 +1,13 @@
+[package]
+name = "wasi-passthrough"
+version = "0.1.0"
+description = "WASI reexport layer"
+authors = ["Roman Volosatovs <rvolosatovs@riseup.net>"]
+categories = ["wasm"]
+edition = "2021"
+homepage = "https://github.com/wasiext/passthrough"
+license = "Apache-2.0 WITH LLVM-exception"
+repository = "https://github.com/wasiext/passthrough"
+
+[dependencies]
+wit-bindgen = { version = "0.32", default-features = false, features = ["realloc", "macros"] }
