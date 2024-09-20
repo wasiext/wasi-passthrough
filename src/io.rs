@@ -144,7 +144,7 @@ impl exports::wasi::io::streams::GuestOutputStream for OutputStream {
     }
 
     fn subscribe(&self) -> exports::wasi::io::poll::Pollable {
-        exports::wasi::io::poll::Pollable::new(Self::subscribe(self))
+        Self::subscribe(self).into()
     }
 
     fn write_zeroes(&self, len: u64) -> Result<(), exports::wasi::io::streams::StreamError> {
