@@ -1,6 +1,6 @@
 [package]
 name = "wasi-passthrough"
-version = "0.3.1"
+version = "0.3.2"
 description = "WASI reexport layer"
 
 authors.workspace = true
