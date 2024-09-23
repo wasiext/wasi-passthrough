@@ -56,6 +56,4 @@ world passthrough {
     import wasi:sockets/tcp@0.2.1;
     import wasi:sockets/udp-create-socket@0.2.1;
     import wasi:sockets/udp@0.2.1;
-
-    include wasiext:http/proxy@0.1.0;
 }

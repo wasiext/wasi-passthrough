@@ -1,6 +1,6 @@
 [package]
 name = "wasi-passthrough"
-version = "0.2.0"
+version = "0.3.0"
 description = "WASI reexport layer"
 
 authors.workspace = true
@@ -25,7 +25,7 @@ members = ["crates/*"]
 wit-bindgen = { workspace = true }
 
 [workspace.dependencies]
-wasi-passthrough = { version = "0.2.0", path = "." }
+wasi-passthrough = { version = "0.3", path = "." }
 wit-bindgen = { version = "0.32", default-features = false, features = [
     "realloc",
     "macros",
