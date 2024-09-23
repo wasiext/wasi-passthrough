@@ -1,6 +1,7 @@
 [package]
 name = "wasi-passthrough-logging"
 version = "0.1.0"
+description = "wasi:logging passthrough layer"
 
 authors.workspace = true
 categories.workspace = true

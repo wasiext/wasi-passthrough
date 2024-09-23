@@ -1,6 +1,7 @@
 [package]
 name = "wasi-passthrough-ext"
 version = "0.1.0"
+description = "wasiext:passthrough passthrough layer"
 
 authors.workspace = true
 categories.workspace = true
