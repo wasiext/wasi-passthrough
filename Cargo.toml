@@ -25,7 +25,7 @@ members = ["crates/*"]
 wit-bindgen = { workspace = true }
 
 [workspace.dependencies]
-wasi-passthrough = { version = "0.3.1", path = "." }
+wasi-passthrough = { version = "0.3.2", path = "." }
 wit-bindgen = { version = "0.32", default-features = false, features = [
     "realloc",
     "macros",
