@@ -1,5 +1,9 @@
 package wasiext:passthrough-ext@0.1.0;
 
-world passthrough {
-    include wasiext:http/proxy@0.1.0;
+world passthrough-exports {
+    export wasiext:http/ext@0.1.0;
+}
+
+world passthrough-imports {
+    import wasiext:http/ext@0.1.0;
 }

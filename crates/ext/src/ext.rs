@@ -5,12 +5,20 @@ impl exports::wasiext::http::ext::Guest for () {
         wasi_passthrough::bindings::exports::wasi::http::types::ResponseOutparam,
         wasi_passthrough::bindings::exports::wasi::http::types::FutureIncomingResponse,
     ) {
-        wasiext::http::ext::new_response_outparam()
+        let (out, res) = wasiext::http::ext::new_response_outparam();
+        (
+            wasi_passthrough::bindings::exports::wasi::http::types::ResponseOutparam::new(out),
+            wasi_passthrough::bindings::exports::wasi::http::types::FutureIncomingResponse::new(
+                res,
+            ),
+        )
     }
 
     fn new_incoming_request(
         req: wasi_passthrough::bindings::exports::wasi::http::types::OutgoingRequest,
     ) -> wasi_passthrough::bindings::exports::wasi::http::types::IncomingRequest {
-        wasiext::http::ext::new_incoming_request(req)
+        wasi_passthrough::bindings::exports::wasi::http::types::IncomingRequest::new(
+            wasiext::http::ext::new_incoming_request(req.into_inner()),
+        )
     }
 }
