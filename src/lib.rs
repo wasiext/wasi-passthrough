@@ -6,6 +6,5 @@ mod ext;
 mod filesystem;
 mod http;
 mod io;
-mod logging;
 mod random;
 mod sockets;

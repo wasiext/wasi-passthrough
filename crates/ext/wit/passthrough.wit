@@ -1,0 +1,5 @@
+package wasiext:passthrough-ext@0.1.0;
+
+world passthrough {
+    include wasiext:http/proxy@0.1.0;
+}
