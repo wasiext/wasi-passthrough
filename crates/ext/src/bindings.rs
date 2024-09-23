@@ -6,7 +6,8 @@ wit_bindgen::generate!({
         "wasi:io/poll@0.2.1": wasi_passthrough::bindings::exports::wasi::io::poll,
         "wasi:io/streams@0.2.1": wasi_passthrough::bindings::exports::wasi::io::streams,
         "wasiext:http/ext@0.1.0": generate,
-    }
+    },
+    type_section_suffix: "wasi-passthrough-ext",
 });
 
 type Component = ();
