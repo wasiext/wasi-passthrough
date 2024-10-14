@@ -2,6 +2,7 @@ package wasiext:passthrough-logging@0.1.0;
 
 world passthrough {
     export wasi:logging/logging;
+    export wasi:logging/logging@0.1.0-draft;
 
-    import wasi:logging/logging;
+    import wasi:logging/logging@0.1.0-draft;
 }
