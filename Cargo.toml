@@ -1,6 +1,6 @@
 [package]
 name = "wasi-passthrough"
-version = "0.3.2"
+version = "0.4.0"
 description = "WASI reexport layer"
 
 authors.workspace = true
@@ -19,14 +19,25 @@ license = "Apache-2.0 WITH LLVM-exception"
 repository = "https://github.com/wasiext/passthrough"
 
 [workspace]
-members = ["crates/*"]
+members = ["crates/*", "tests/components/*"]
 
 [dependencies]
 wit-bindgen = { workspace = true }
 
+[dev-dependencies]
+anyhow = { workspace = true }
+wasi-preview1-component-adapter-provider = { workspace = true }
+wit-component = { workspace = true }
+
 [workspace.dependencies]
-wasi-passthrough = { version = "0.3.2", path = "." }
-wit-bindgen = { version = "0.32", default-features = false, features = [
+anyhow = { version = "1", default-features = false }
+wasi-passthrough = { version = "0.4", path = "." }
+wasi-passthrough-ext = { path = "./crates/ext" }
+wasi-passthrough-keyvalue = { path = "./crates/keyvalue" }
+wasi-passthrough-logging = { path = "./crates/logging" }
+wasi-preview1-component-adapter-provider = { version = "25", default-features = false }
+wit-bindgen = { version = "0.34", default-features = false, features = [
     "realloc",
     "macros",
 ] }
+wit-component = { version = "0.219", default-features = false }

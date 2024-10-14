@@ -1,0 +1,21 @@
+[package]
+name = "test-all"
+version = "0.1.0"
+publish = false
+
+authors.workspace = true
+categories.workspace = true
+edition.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen = { workspace = true }
+wasi-passthrough = { workspace = true }
+wasi-passthrough-ext = { workspace = true }
+wasi-passthrough-keyvalue = { workspace = true }
+wasi-passthrough-logging = { workspace = true }
