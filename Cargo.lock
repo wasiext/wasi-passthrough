@@ -244,6 +244,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "wasi-passthrough-blobstore"
+version = "0.1.0"
+dependencies = [
+ "wit-bindgen",
+]
+
+[[package]]
 name = "wasi-passthrough-ext"
 version = "0.2.0"
 dependencies = [

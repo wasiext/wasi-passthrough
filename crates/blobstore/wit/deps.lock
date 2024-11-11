@@ -1,0 +1,9 @@
+[blobstore]
+url = "https://github.com/WebAssembly/wasi-blobstore/archive/v0.2.0-draft.tar.gz"
+sha256 = "20cef78d42a6b933a6fd46b06275119219e22197dc33c4426df3b2a4c5562dbc"
+sha512 = "f0ae942f356f6ec5ff23451dddf638042ab120cf8aea858b45dae5f467b3f60f5442802912963e6cd9ede84a216aabaee930917f062c0906fe2124e52d5d118b"
+deps = ["io"]
+
+[io]
+sha256 = "2a74bd811adc46b5a0f19827ddbde89870e52b17615f4d0873f06fd977250caf"
+sha512 = "94624f00c66e66203592cee820f80b1ba91ecdb71f682c154f25eaf71f8d8954197dcb64503bc21e72ed5e812af7eae876df47b7eb727b02db3a74a7ce0aefca"
